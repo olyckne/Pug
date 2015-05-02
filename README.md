@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/olyckne/Pug.svg)](https://travis-ci.org/olyckne/Pug)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/152c8d56-6910-417f-b794-027ffd0803e8/mini.png)](https://insight.sensiolabs.com/projects/152c8d56-6910-417f-b794-027ffd0803e8)
-[![Code Coverage](https://scrutinizer-ci.com/g/olyckne/fat/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/olyckne/fat/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/olyckne/fat/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/olyckne/fat/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/olyckne/Pug/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/olyckne/Pug/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/olyckne/Pug/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/olyckne/Pug/?branch=master)
 # I LOVE PUGS!
 A simple PHP wrapper around [http://pugme.herokuapp.com](http://pugme.herokuapp.com)
 
