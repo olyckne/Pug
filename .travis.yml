@@ -17,6 +17,6 @@ before_script:
 
 script: vendor/bin/phpspec run
 
-after_script:
+after_success:
   - wget https://scrutinizer-ci.com/ocular.phar
   - php ocular.phar code-coverage:upload --format=php-clover build/logs/clover.xml
