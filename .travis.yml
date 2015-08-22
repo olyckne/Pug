@@ -7,15 +7,17 @@ php:
   - 7.0
   - hhvm
 
-matrix:
-  allow_failures:
-    - php: 7.0
-    - php: hhvm
+env:
+  global:
+    - test=test-coverage
 
 before_script:
-  - composer install --prefer-source --no-interaction
+  - travis_retry composer self-update
+  - travis_retry composer install --prefer-source --no-interaction
+  - if [[ "$TRAVIS_PHP_VERSION" == "7.0" ]] || [[ "$TRAVIS_PHP_VERSION" == "hhvm" ]]; then test=test; fi
 
-script: vendor/bin/phpspec run
+script:
+  - composer $test
 
 after_success:
   - wget https://scrutinizer-ci.com/ocular.phar

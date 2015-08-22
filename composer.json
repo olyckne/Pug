@@ -21,5 +21,9 @@
         "psr-4": {
             "Olyckne\\Pug\\": "src/"
         }
+    },
+    "scripts": {
+        "test": "phpspec run",
+        "test-coverage": "phpspec run -c phpspec-with-coverage.yml"
     }
 }

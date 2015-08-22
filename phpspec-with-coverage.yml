@@ -1,0 +1,16 @@
+suites:
+  main_suite:
+    namespace: Olyckne\Pug
+    psr4_prefix: Olyckne\Pug
+
+formatter.name: pretty
+extensions:
+  - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+  format:
+    - clover
+    - html
+  output:
+    clover: build/logs/clover.xml
+    html: build/logs/html
