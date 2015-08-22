@@ -40,7 +40,7 @@ class Pug
     {
         try {
             $response = $this->client->get($this->baseUrl . $url);
-            $pug = $response->json();
+            $pug = json_decode($response->getBody(), true);
         } catch (Exception $e) {
             throw new PugNotFoundException;
         }

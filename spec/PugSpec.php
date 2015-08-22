@@ -3,10 +3,10 @@
 namespace spec\Olyckne\Pug;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Message\Response;
-use GuzzleHttp\Stream\Stream;
-use GuzzleHttp\Subscriber\History;
-use GuzzleHttp\Subscriber\Mock;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\Response;
 use Olyckne\Pug\PugNotFoundException;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -19,29 +19,25 @@ class PugSpec extends ObjectBehavior
     protected $client;
 
     /**
-     * GuzzleHttp\Subscriber\Mock
+     * GuzzleHttp\Handler\MockHandler
      */
     protected $mock;
-    /**
-     * GuzzleHttp\Subscriber\History
-     */
-    protected $history;
+
 
     function let()
     {
-        $this->client = new Client;
-        $this->mock = new Mock;
-        $this->history = new History;
+        $this->mock = new MockHandler;
+        $handler = HandlerStack::create($this->mock);
 
-        $this->client->getEmitter()->attach($this->mock);
-        $this->client->getEmitter()->attach($this->history);
+        $this->client = new Client(['handler' => $handler]);
+
         $this->beConstructedWith($this->client);
     }
 
     private function setupResponse(array $data = [], $code = 200, array $headers = [])
     {
-        $body = Stream::factory(json_encode($data));
-        $this->mock->addResponse(new Response($code, $headers, $body));
+        $body = json_encode($data);
+        $this->mock->append(new Response($code, $headers, $body));
     }
 
     function it_is_initializable()
