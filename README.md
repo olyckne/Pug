@@ -49,7 +49,7 @@ Route::get('/', function () {
 ```php
 // boostrap/app.php
 // uncomment $app->withFacades();
-// register the service provider ddsand facade
+// register the service provider and facade
 $app->register('Olyckne\Pug\PugServiceProvider');
 class_alias('Olyckne\Pug\PugFacade', 'Pug');
 ```

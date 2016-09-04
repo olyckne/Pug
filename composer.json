@@ -23,7 +23,6 @@
         }
     },
     "scripts": {
-        "test": "phpspec run",
-        "test-coverage": "phpspec run -c phpspec-with-coverage.yml"
+        "test": "phpspec run"
     }
 }
