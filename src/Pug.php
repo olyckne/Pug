@@ -32,7 +32,7 @@ class Pug
     /**
      * send a request to pugme api
      *
-     * @param sring $url
+     * @param string $url
      * @return mixed
      * @throws PugNotFoundException
      */
